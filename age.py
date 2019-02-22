@@ -10,21 +10,20 @@ def fmtnum(num, str1, strS, strM):
     Format number and trailing words according to number
     """
     if 11 <= num%100 <= 14:
-        return "{} {}".format(num, strM)
-
+        return strM % num
     if num%10 == 1:
-        return "{} {}".format(num, str1)
+        return str1 % num
     elif 2 <= num%10 <= 4:
-        return "{} {}".format(num, strS)
+        return strS % num
     else:
-        return "{} {}".format(num, strM)
+        return strM % num
 
 
 age = int(input("Ваш возраст?: "))
 
-print("На острове %s." % fmtnum(gulls, "чайка", "чайки", "чаек"))
+print("На острове %s." % fmtnum(gulls, "%d чайка", "%d чайки", "%d чаек"))
 
-print("— Вам %s, " % fmtnum(age, "год", "года", "лет"), end="")
+print("— Вам %s, " % fmtnum(age, "%d год", "%d года", "%d лет"), end="")
 
 if age <= 2:
     print("пора в ясли!")
