@@ -14,6 +14,8 @@ class Giraffes(Mammals):
         print(newmsg)
     def eat(self):
         print("%s кушает. Ням-ням..." % self.name)
+    def handshake(self, giraff):
+        print("Здравствуй, %s, я %s!" % (giraff.name, self.name))
         
 tonny = Giraffes("Тони")
 guffy = Giraffes("Гуфи")
@@ -21,3 +23,7 @@ guffy = Giraffes("Гуфи")
 tonny.greet()
 guffy.greet("Гав-гав!")
 guffy.eat()
+
+tonny.handshake(guffy)
+guffy.handshake(tonny)
+
