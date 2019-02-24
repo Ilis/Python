@@ -2,6 +2,8 @@ import turtle
 
 t = turtle.Turtle()
 
+t.hideturtle()
+
 t.speed("fastest")
 
 t.screen.bgcolor("#1B1B1B")
@@ -16,5 +18,3 @@ for x in range(256):
     t.circle(25)
     t.end_fill()
     t.forward(2)
-
-t.hideturtle()
