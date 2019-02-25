@@ -4,3 +4,4 @@ def prime_numbers(val):
         ]
 for n in prime_numbers(42):
     print("%d" % n, end=" ")
+print("")
