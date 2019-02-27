@@ -3,9 +3,9 @@ while True:
         s = input("Сколько вам лет?: ")
         age = int(s)
         if age < 0:
-            print(f"Ха-ха, {age} — это меньше нуля! Серьёзно!")
+            print(f"Ха-ха, {age} — это меньше нуля! Серьёзно:")
         elif age > 199:
-            print(f"Да ладно, {age} — это слишком много! Серьёзно!")
+            print(f"Да ладно, {age} — это слишком много! Серьёзно:")
         else:
             break
     except ValueError:
