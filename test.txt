@@ -1,0 +1,4 @@
+papa:Ilia
+mama:Nata
+kid1:Vika
+kid2:Lena
