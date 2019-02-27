@@ -10,4 +10,5 @@ while True:
             break
     except ValueError:
         print(f"«{s}» лет? Неееет... Ещё раз:")
+del s
 print(f"Ваш возраст — {age}!")
