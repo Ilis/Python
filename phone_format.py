@@ -32,4 +32,4 @@ for s in ["+839987654321",
           "21",
           "1",
           ]:
-    print(phone_format(s))
+    print(phone_format(s).rjust(20))
