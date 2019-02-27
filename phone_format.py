@@ -1,23 +1,23 @@
-def phone_format(phone):
-    """Format tel number (fixed representation)"""
+def phone_format(s):
+    """Format tel number (using f-str)"""
     
-    l = len(phone)
+    l = len(s)
 
     if l < 3:
-        return phone
+        return s
     elif l < 5:
-        return "%s-%s" % (phone[-4:-2], phone[-2:])
+        return f"{s[-4:-2]}-{s[-2:]}"
     elif l < 8:
-        return "%s-%s-%s" % (phone[-7:-4], phone[-4:-2], phone[-2:])
+        return f"{s[-7:-4]}-{s[-4:-2]}-{s[-2:]}"
     elif l < 10:
-        return "%s %s-%s-%s" % (phone[-9:-7], phone[-7:-4], phone[-4:-2], phone[-2:])
+        return f"{s[-9:-7]} {s[-7:-4]}-{s[-4:-2]}-{s[-2:]}"
     elif l == 10:
-        if phone[0] == '9':
-            return "%s %s-%s-%s" % (phone[-10:-7], phone[-7:-4], phone[-4:-2], phone[-2:])
+        if s[0] == '9':
+            return f"{s[-10:-7]} {s[-7:-4]}-{s[-4:-2]}-{s[-2:]}"
         else:
-            return "(%s)%s-%s-%s" % (phone[-10:-7], phone[-7:-4], phone[-4:-2], phone[-2:])
+            return f"({s[-10:-7]}){s[-7:-4]}-{s[-4:-2]}-{s[-2:]}"
     else:
-        return "%s %s %s-%s-%s" % (phone[:-10], phone[-10:-7], phone[-7:-4], phone[-4:-2], phone[-2:])
+        return f"{s[:-10]} {s[-10:-7]} {s[-7:-4]}-{s[-4:-2]}-{s[-2:]}"
 
 for s in ["+839987654321",
           "+73437654321",
