@@ -19,11 +19,11 @@ with plt.xkcd():
     # data = np.ones(100)
     # data[70:] -= np.arange(30)
 
+    plt.plot(x, y)
+
     plt.annotate(
         'x ≈ y',
         xy=(0, 0), arrowprops=dict(arrowstyle='->'), xytext=(-1, 0.5))
-
-    plt.plot(x, y)
 
     plt.xlabel('x')
     plt.ylabel('sin(x)')
