@@ -3,13 +3,13 @@ from mpl_toolkits import mplot3d
 import numpy as np
 
 
-m = np.linspace(0, 21, 300)
-g = np.linspace(0, 11, 20)
+m = np.linspace(0, 300, 31)
+g = np.linspace(0, 20, 26)
 
 print(m)
 print(g)
 
-mm, gg = np.meshgrid(g, m, sparse=True)
+mm, gg = np.meshgrid(m, g, sparse=True)
 
 print(mm)
 print(gg)
@@ -67,20 +67,24 @@ f2 = tar2
 p1 = zero(mm, gg)
 p2 = zero(mm, gg)
 
-for mc in range(len(m)):
-    for gc in range(len(g)):
-        p1[mc][gc] = f1(mc, gc)
-        p2[mc][gc] = f2(mc, gc)
+print(f"lm={len(m)}")
+print(f"lg={len(g)}")
+
+for gc in range(len(g)):
+    for mc in range(len(m)):
+        p1[gc][mc] = f1(m[mc], g[gc])
+        p2[gc][mc] = f2(m[mc], g[gc])
+        # print(f"gc={gc}, mc={mc}, f1={f1(mc, gc)}, f2={f2(mc, gc)}")
 
 print(p1)
 print(p2)
 
 ax = plt.axes(projection='3d')
 ax.plot_surface(gg, mm, p1, rstride=1, cstride=1, cmap='viridis', edgecolor='none')
-ax.plot_wireframe(gg, mm, p2, rstride=20, cstride=1, color='blue', linewidth=0.2)
+ax.plot_wireframe(gg, mm, p2, rstride=1, cstride=1, color='brown', linewidth=0.2)
 ax.set_title('Тариф')
-ax.set_xlabel('Минуты')
-ax.set_ylabel('Гигабайты')
+ax.set_xlabel('Гигабайты')
+ax.set_ylabel('Минуты')
 ax.set_zlabel('Руб')
 
 plt.show()
