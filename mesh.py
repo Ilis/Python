@@ -6,3 +6,8 @@ g = np.linspace(0, 5, 6)
 
 print(m)
 print(g)
+
+mm, gg = np.meshgrid(g, m, sparse=True)
+
+print(mm)
+print(gg)
